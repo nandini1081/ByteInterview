@@ -102,8 +102,8 @@ export async function getCurrentUser() : Promise<User | null>{
 }
 
 export async function isAuthenticated(){
-    const user = getCurrentUser();
-    
+    const user = await getCurrentUser();
+    // console.log(user);s
     //if u have an object that contains a user data and if u use {} bracket to it , then u get false.
     //  A double curly bracket means that the false will get converted to true. 
     return !!user

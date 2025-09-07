@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   const isUserAuthenticated = await isAuthenticated();
+  console.log(isUserAuthenticated);
   if(!isUserAuthenticated) redirect('/sign-in');
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex flex-col">
